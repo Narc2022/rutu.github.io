@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div class="bg_heart">
+        </div>
+        <div class="name">
+          <h2>Happy Birthday</h2>
+          <h1><span class="mah">❤</span> Rutuja <span class="mah">❤</span></h1>
+          <p style="color:pink">My dear love, you know how much I always wish to give you the best of what the world can offer. This day is no different. So I wish you a very happy birthday and I promise to love you forever!</p>
+          <img src="https://i.pinimg.com/originals/6c/48/1e/6c481e95cab0ac618d2cd1f54d385229.png" onclick="play()">
+          <p></p>
+        </div>
+    </div>   
+    <div class="birthdayCard">
+        <div class="cardFront"><h3 class="happy">HAPPY BIRTHDAY RUTU!</h3>
+        <div class="balloons">
+          <div class="balloonOne"></div>
+          <div class="balloonTwo"></div>
+          <div class="balloonThree"></div>
+          <div class="balloonFour"></div>
+        </div>
+        </div>
+          <div class="cardInside">
+            <h3 class="back">HAPPY BIRTHDAY RUTUJA!</h3>
+            <p>Dear Friend,</p>
+            <p>Happy birthday!! I hope your day is filled with lots of love and laughter! May all of your birthday wishes & dreams come true.</p>
+            <p class="name">Rutuja</p>
+          </div>
+    </div>
+    <div class='container'>
+      <video id="audio" autoplay src="https://res.cloudinary.com/sachinnarofficialsportfolio/video/upload/v1651896106/Rutuja/y2mate.com_-_Rutuja_Happy_birthday_to_you_Rutuja_Happy_Birthday_writing_whatsapp_status_360p_rkaoet.mp4" ></video>
+    </div>
+        <script>
+          function play(){
+               var audio = document.getElementById("audio");
+               audio.play();
+                         }
+           </script>
+        
+          
+         
+</body>
+<script>
+    var love = setInterval(function(){
+  var r_num = Math.floor(Math.random() * 40) + 1;
+	var r_size = Math.floor(Math.random() * 65) + 10;
+	var r_left = Math.floor(Math.random() * 100) + 1;
+	var r_bg = Math.floor(Math.random() * 25) + 100;
+  var r_time = Math.floor(Math.random() * 5) + 5;
+  
+  $('.bg_heart').append("<div class='heart' style='width:"+r_size+"px;height:"+r_size+"px;left:"+r_left+"%;background:rgba(255,"+(r_bg-25)+","+r_bg+",1);-webkit-animation:love "+r_time+"s ease;-moz-animation:love "+r_time+"s ease;-ms-animation:love "+r_time+"s ease;animation:love "+r_time+"s ease'></div>");
+  
+  $('.bg_heart').append("<div class='heart' style='width:"+(r_size-10)+"px;height:"+(r_size-10)+"px;left:"+(r_left+r_num)+"%;background:rgba(255,"+(r_bg-25)+","+(r_bg+25)+",1);-webkit-animation:love "+(r_time+5)+"s ease;-moz-animation:love "+(r_time+5)+"s ease;-ms-animation:love "+(r_time+5)+"s ease;animation:love "+(r_time+5)+"s ease'></div>");
+  
+  $('.heart').each(function(){
+    var top = $(this).css("top").replace(/[^-\d\.]/g, '');
+    var width = $(this).css("width").replace(/[^-\d\.]/g, '');
+    if(top <= -100 || width >= 150){
+      $(this).detach();
+    }
+  });
+},500);
+</script>
+</html>
